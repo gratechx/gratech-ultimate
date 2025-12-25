@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comet X Sidebar</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <header class="cx-header">
+    <div class="cx-logo">☄️ Comet X</div>
+    <div class="cx-actions">
+      <button id="btn-tabs" class="cx-btn">التبويبات</button>
+      <button id="btn-notes" class="cx-btn">ملاحظات</button>
+      <button id="btn-github" class="cx-btn">GitHub</button>
+      <button id="btn-options" class="cx-btn">الإعدادات</button>
+    </div>
+  </header>
+
+  <main id="view" class="cx-view">
+    <section id="view-tabs" class="cx-panel hidden"></section>
+    <section id="view-notes" class="cx-panel hidden">
+      <div class="cx-note-new">
+        <textarea id="note-text" placeholder="اكتب ملاحظة سياقية..."></textarea>
+        <input id="note-tags" placeholder="وسوم (مفصولة بفواصل)">
+        <div class="row">
+          <button id="btn-suggest" class="cx-btn minor">اقترح وسوم</button>
+          <button id="btn-save" class="cx-btn primary">حفظ</button>
+        </div>
+      </div>
+      <div id="notes-list" class="cx-notes"></div>
+    </section>
+    <section id="view-github" class="cx-panel hidden">
+      <p>استيراد Issues/PRs من GitHub (Placeholder).</p>
+      <button id="btn-import" class="cx-btn">استيراد الآن</button>
+      <pre id="gh-result" class="cx-pre"></pre>
+    </section>
+  </main>
+
+  <footer class="cx-footer">فيروزي مثل Copilot • مزامنة لاحقًا • ذكاء سياقي</footer>
+  <script src="sidebar.js" type="module"></script>
+</body>
+</html>

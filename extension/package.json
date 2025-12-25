@@ -1,0 +1,9 @@
+{
+  "name": "gratech-ultimate-extension",
+  "version": "1.0.0",
+  "description": "GraTech Ultimate Chrome Extension Scripts",
+  "scripts": {
+    "build": "echo Extension ready - no build needed",
+    "zip": "powershell Compress-Archive -Path * -DestinationPath ../gratech-extension.zip -Force"
+  }
+}

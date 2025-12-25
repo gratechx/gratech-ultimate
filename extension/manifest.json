@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Comet X Ultimate v4",
+  "version": "4.0.0",
+  "description": "Sidebar فيروزي دائم، ذاكرة عربية، وسوم ذكية، استيراد GitHub، تحكم بالمتصفح، مزامنة سحابة، وذكاء سياقي.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "sidePanel",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*",
+    "https://*.github.com/*",
+    "https://gratech.sa/*",
+    "https://*.gratech.sa/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Comet X"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

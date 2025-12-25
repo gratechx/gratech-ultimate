@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>GraTech Ultimate | منصة الذكاء الاصطناعي السيادية</title>
+  <meta name="description" content="GraTech Ultimate - منصة ذكاء اصطناعي سيادية سعودية. تجمع بين Gemini, DeepSeek, Llama, GPT في واجهة واحدة. صممها سليمان الشمري." />
+  <meta name="keywords" content="GraTech, AI, Gemini, DeepSeek, Llama, GPT, Saudi, سعودية, ذكاء اصطناعي, سليمان الشمري" />
+  <meta name="author" content="Sulaiman Alshammari" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gratech.sa/" />
+  <meta property="og:title" content="GraTech Ultimate | Sovereign AI Platform" />
+  <meta property="og:description" content="The most advanced AI platform built in Saudi Arabia. Multi-model orchestration with enterprise features." />
+  <meta property="og:image" content="https://gratech.sa/og-image.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://gratech.sa/" />
+  <meta property="twitter:title" content="GraTech Ultimate | Sovereign AI Platform" />
+  <meta property="twitter:description" content="The most advanced AI platform built in Saudi Arabia." />
+  <meta property="twitter:image" content="https://gratech.sa/og-image.png" />
+  <meta property="twitter:creator" content="@Grar00t" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#14b8a6" />
+  <meta name="msapplication-TileColor" content="#0f172a" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/src/index.css" as="style" />
+  
+  <style>
+    /* Critical CSS - Above the fold */
+    :root {
+      --gratech-bg: #0f172a;
+      --gratech-primary: #14b8a6;
+    }
+    
+    html, body, #root {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: var(--gratech-bg);
+    }
+    
+    /* Loading Screen */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--gratech-bg);
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loader-ring {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(20, 184, 166, 0.2);
+      border-top-color: var(--gratech-primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .loader-text {
+      margin-top: 24px;
+      color: #94a3b8;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-ring"></div>
+    <div class="loader-text">جاري التحميل...</div>
+  </div>
+  
+  <!-- App Root -->
+  <div id="root"></div>
+  
+  <!-- Remove loading screen after app loads -->
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loading-screen');
+      if (loader) {
+        loader.classList.add('fade-out');
+        setTimeout(() => loader.remove(), 500);
+      }
+    });
+  </script>
+  
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
